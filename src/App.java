@@ -18,21 +18,31 @@ public class App extends JFrame{
         setSize(200,200);
         setVisible(true);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
-        JOptionPane.showMessageDialog(this,"Ya esta de ese color", "Color ya asignado",JOptionPane.PLAIN_MESSAGE);
+        
     }
     public static void main(String[] args) throws Exception {
         App pestaña = new App();
     }
     class OyenteNegro implements ActionListener{
         public void actionPerformed(ActionEvent dark){
-
-            panel.setBackground(Color.black);
+            if(panel.getBackground()==Color.black){
+                JOptionPane.showMessageDialog(null,"Ya esta de ese color", "Color ya asignado",JOptionPane.PLAIN_MESSAGE);
+            }
+            else{
+              panel.setBackground(Color.black);  
+            }
+            
         }
     }
     class OyenteBlanco implements ActionListener{
         public void actionPerformed(ActionEvent light){
-
-            panel.setBackground(Color.white);
+            if(panel.getBackground()==Color.white){
+                JOptionPane.showMessageDialog(null,"Ya esta de ese color", "Color ya asignado",JOptionPane.PLAIN_MESSAGE);
+            }
+            else{
+                panel.setBackground(Color.white);
+            }
+            
         }
     }
 }
